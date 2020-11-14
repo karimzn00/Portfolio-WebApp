@@ -1,0 +1,180 @@
+
+<body>
+<div class = 'login'><a href = '/login'>Login</a></div>
+<div class = 'container'>
+   
+   <div class = 'img'>
+      <img src="./assets/img.jpg" alt="..." class="rounded-circle">
+      <p class = 'name'> KZN </p>
+      <div class = 'smedia'>
+         <img src="./assets/github.png" alt="..." class="social">
+         <img src="./assets/linkedin.png" alt="..." class="social">
+         <img src="./assets/twitter.png" alt="..." class="social">
+         <img src="./assets/instagram.png" alt="..." class="social">
+      </div>
+   </div>
+   
+   <div class = 'info'>
+      <div class="card card-body">
+         <ul class="list-group">
+            <li class="list-group-item">Country : Morocco </li>
+            <li class="list-group-item">Job : Maintenance Engineer </li>
+            <li class="list-group-item">E-MAIL : contact@kimtron.net</li>
+         </ul>
+         
+      <mat-divider></mat-divider>
+
+         <ul class="list-group">
+            <li class="list-group-item">Arabic <span class="badge badge-primary badge-pill">Fluent</span> </li>
+            <li class="list-group-item">English <span class="badge badge-primary badge-pill">Fluent</span> </li>
+            <li class="list-group-item">French <span class="badge badge-primary badge-pill">Fluent</span> </li>
+            <li class="list-group-item">Hebrew <span class="badge badge-primary badge-pill">Basics</span> </li>
+            <li class="list-group-item">Tamazight <span class="badge badge-primary badge-pill">Fluent</span> </li>
+         </ul>
+      </div>
+
+   </div>
+   
+   <div class = 'quote'>
+      <h1>
+      <div class = 'q'>
+     “ Once a new technology rolls over you, if you're not part of the steamroller, you're part of the road. ”
+      <tr>- Stewart Brand
+      </div>
+      </h1>
+   </div>
+   
+
+
+   <div class = 'bio' id = 'biog'>
+
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+     Biography
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+      <div class="card card-body">
+         This is Karim, from Morocco, I'm 27 years old. I used to do programming since 2008 which make me familiar with many programming languages (Python, Javascrip, Typescript, Latex). my Story began with web-developement as a full stack developper (back-end using django and front-end using angular), last year I started studying Machine Learning using online ressources, including Deep Learning. I have a lot of projects which will be accessable in this Potfolio. I'm working as an Electrical Engineer in my ordinary life.
+
+
+<mat-divider [inset]="true"></mat-divider>
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Machine Learning
+              <span class="badge badge-primary badge-pill"> Intermidiate</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I've a good background in algebra, statistics, calculus and probability. I took the Stanford Classe CS290 and I had many projects using the skills I leant from the classe.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            Deep Learning
+              <span class="badge badge-primary badge-pill"> Intermidiate</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          I took the Stanford Classe CS230 and I had many projects in computer Vision and NLP, using Deep Neural Networks.
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              web developement
+              <span class="badge badge-primary badge-pill">Expert</span> 
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I leaned the basics of Web-dev in 2008, Now I'm using Angular for the front-end and Django for the back-end.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Python
+              <span class="badge badge-primary badge-pill">Expert</span> 
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>Diving into ML provide me an excelent understanding of python so as deveoping back-end using Django.</p>
+        </mat-expansion-panel> 
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Javascript
+              <span class="badge badge-primary badge-pill">Intermidiate</span> 
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>As a front-end programmer, I got an excellent understanding of Javascript, Typescript as well as HTML & CSS.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Latex
+              <span class="badge badge-primary badge-pill">Intermidiate</span> 
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I worked and I'm working on many reseach papers which make me familiar with Latex.</p>
+        </mat-expansion-panel>   
+      </mat-accordion>         
+
+      </div>
+
+
+       </ng-template>
+    </mat-expansion-panel>
+
+
+
+       <div class = 'proj' id= 'proj'>
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+      My Projects
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+      <app-project-list></app-project-list>
+      </ng-template>
+    </mat-expansion-panel>
+
+    
+   </div>
+
+
+   <div class = 'blog' id = 'blog'>
+      
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+      Blogs
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+      <app-blog-list></app-blog-list>
+      </ng-template>
+    </mat-expansion-panel>
+   </div>
+</mat-accordion> 
+   </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+</body>

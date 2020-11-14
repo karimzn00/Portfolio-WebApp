@@ -1,0 +1,35 @@
+
+
+<div class="col-md-8">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by title"
+      [(ngModel)]="title"
+    />
+    <div class="input-group-append">
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        (click)="searchTitle()"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</div>
+<mat-accordion *ngFor = 'let project of project'
+>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span matBadge=" {{project.technology}}" matBadgeOverlap="false" matBadgeSize="large">{{project.title}}</span>
+             
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{project.content}}</p>
+        </mat-expansion-panel>
+</mat-accordion>
+

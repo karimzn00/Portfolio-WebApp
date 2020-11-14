@@ -1,0 +1,33 @@
+
+<div class="col-md-8">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by title"
+      [(ngModel)]="title"
+    />
+    <div class="input-group-append">
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        (click)="searchTitle()"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</div>
+<mat-accordion *ngFor = 'let blog of blogs'
+>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span matBadge=" {{blog.date}}" matBadgeOverlap="false" matBadgeSize="large">{{blog.title}}</span>
+             
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{blog.content}}</p>
+        </mat-expansion-panel>
+</mat-accordion>
