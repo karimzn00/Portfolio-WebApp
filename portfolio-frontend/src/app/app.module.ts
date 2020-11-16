@@ -9,10 +9,10 @@ import { ProjectListComponent } from './projects/project-list/project-list.compo
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AddBlogComponent } from './blogs/add-blog/add-blog.component';
 import { BlogDetailComponent } from './blogs/blog-detail/blog-detail.component';
 import { BlogListComponent } from './blogs/blog-list/blog-list.component';
@@ -20,6 +20,9 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { ContentComponent } from './projects/content/content.component';
 import { CanvasWhiteboardModule } from 'node_modules/ng2-canvas-whiteboard';
 import { LoginComponent } from './auth/login/login.component'
+import {MatDialogModule} from '@angular/material/dialog';
+import { AuthService, AuthInterceptor, AuthGuard } from './services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -43,9 +46,20 @@ import { LoginComponent } from './auth/login/login.component'
     BrowserAnimationsModule,
     FormsModule,
     MatBadgeModule,
-    CanvasWhiteboardModule
+    CanvasWhiteboardModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  AuthGuard,
+  AuthService,
+  {
+    provide : HTTP_INTERCEPTORS,
+    useClass : AuthInterceptor,
+    multi : true,
+  }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
