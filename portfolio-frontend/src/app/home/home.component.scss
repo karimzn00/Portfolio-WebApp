@@ -1,0 +1,158 @@
+.login {
+	position: fixed;
+	margin-top: 0;
+	margin-left:85%;
+	margin-top: 0.5%
+}
+.edit_profil{
+	position: fixed;
+	margin-top: 0;
+	margin-left: 79%;
+	margin-top: 0.5%
+}
+body {
+	background-color: #141E30;
+	background-image: linear-gradient(315deg, #141E30 0%, #cfd6e6 74%);
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-position: center;
+	height : auto;
+
+} 
+
+.container {
+	width: 100vw;
+	height : auto;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: 270px auto ;
+	align-items : stretch;
+	 
+
+
+
+}
+.img {
+	 
+	grid-column: 1;
+	grid-row: 1 ;
+	text-align: center;
+	 
+ 
+
+}
+.info {
+	position: relative;
+	grid-column: 1;
+	grid-row: 2;
+	font-size: 15px;
+	align-self: stretch;
+}
+
+.quote {
+ 	grid-column: 2/ span 3;
+	grid-row : 1 / span 1;
+	text-align: center;
+	justify-self: center;
+	align-self: center;
+
+
+}
+.q {
+	line-height: 1.35;
+    display: inline;
+    padding: 0.5rem 1rem;
+    background: #534d7a;
+    box-decoration-break: clone;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 1em;
+    filter: url('#goo');
+
+}
+
+.btns {
+	grid-column: 2/ span 3;
+	grid-row : 1 / span 1;
+	text-align: center;
+	font-size: 20px;
+	justify-self: left;
+	align-self: end
+}
+.bio {
+	grid-column: 2/ span 3;
+	grid-row : 2 / span 1;
+	align-self: stretch;
+	font-size: 15px
+}
+
+
+
+.rounded-circle {
+	margin-top: 10px;
+   	height: 200px;
+   	width: 200px;
+
+}
+.social {
+
+	width: 20px;
+	height: 22px;
+	margin-right: 5px;
+	margin-bottom: 20px;
+
+}
+.badge{
+	float: right;
+}
+.card {
+	margin: auto;
+	margin-bottom: 15px;
+}
+.footer {
+	height: 50px;
+	width: 100vw;
+	background-color: blue
+}
+.list-group-item {
+	background-color: #d9d9d9;
+	background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);	
+}
+mat-expansion-panel {
+	color: black;
+	background-color: #d9d0d0;
+	background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);	
+
+}
+mat-panel-title {
+	color: black;
+
+}
+
+mat-devide {
+	position: absolute;
+}
+.btn-primary{
+	background-color: #534d7a
+}
+
+mat-divider {
+	margin-bottom : 10px ;
+}
+.edit_img{
+	position: absolute;
+ 	margin-top: 10.5%;
+	margin-left: 11%
+}
+
+.edit_profil_form {
+  height: 100%;
+  
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav{
+	width: 30%;
+	 padding: 20px;
+}

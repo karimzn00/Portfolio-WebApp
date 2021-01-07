@@ -1,0 +1,92 @@
+
+      <p ><b>Edit Your Profil</b></p>
+
+  
+
+
+        <form [formGroup]="my_profil" (ngSubmit)="save_profil()"  novalidate>
+          <div class="form-group" >
+            <label for="exampleFormControlInput">Biography :</label>
+            <textarea type="text" class="form-control" formControlName="biog" placeholder="Enter Biography here..."></textarea>
+          </div>
+          <div class="form-group" >
+            <label for="exampleFormControlInput">Quote :</label>
+            <input type="text" class="form-control" formControlName="quote" placeholder="Enter your quote here...">
+          </div>
+          <div class="form-group" >
+            <label for="exampleFormControlInput">Image :</label>
+            <input type="file" (change) =  'image_change_event($event)' class="form-control" formControlName="img" placeholder="image...">
+          </div>
+
+
+            <div class="form-group" >
+
+            
+            <label for="exampleFormControlInput">Informations :</label>
+            <input type="text" class="form-control" formControlName="email" placeholder="Enter E-Mail here...">
+          </div>
+          <div class="form-group" >
+            <input type="text" class="form-control" formControlName="country" placeholder="Enter Country here...">
+          </div>
+          <div class="form-group" >
+            <input type="text" class="form-control" formControlName="job" placeholder="Enter your Occupation here...">
+          </div>
+           
+
+
+
+          <div class="form-group" >  
+            <label for="exampleFormControlInput">Social Media :</label>
+            <input type="text" class="form-control" formControlName="github" placeholder="Enter GitHub URL...">
+          </div>
+          <div class="form-group" >
+            <input type="text" class="form-control" formControlName="linkdin" placeholder="Enter LinkdIn URL...">
+          </div>
+          <div class="form-group" >
+            <input type="text" class="form-control" formControlName="twitter" placeholder="Enter Twitter URL...">
+          </div>
+          <div class="form-group" >
+            <input type="text" class="form-control" formControlName="instagram" placeholder="Enter Instagram URL...">
+          </div>
+          
+          <div class="form-group" >
+            <label for="exampleFormControlInput">Skills :</label>
+             <input type="text" class="form-control" formControlName="skill" placeholder="Enter skill..." style="width: 90%">
+          </div>
+          <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection" *ngFor="let skill of skills">
+             <mat-chip color="primary"
+              style = 'width: 34%'>
+                          {{skill.skill}}
+                          <mat-icon matChipRemove style = 'margin-left: 75%; position: fixed;'>cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+          
+            <label for="exampleFormControlInput" style="margin-top: 10px">Languages :</label>
+
+          <button style = 'margin : 5% 1% 0 30%' type="submit" class="btn btn-outline-primary"  >
+            save
+          </button>
+           
+
+</form>
+<mat-form-field class="example-chip-list">
+   <mat-chip-list #chipList>
+     <mat-chip 
+     *ngFor="let lang of languages"
+     [selectable]="selectable"
+     [removable]="removable"
+      (removed)="remove(lang, Languages)">
+              {{lang.name}}
+    <mat-icon matChipRemove  *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input placeholder="New language..."
+       [matChipInputFor]="chipList"
+       [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+       [matChipInputAddOnBlur]="addOnBlur"
+       (matChipInputTokenEnd)="add($event, languages)">
+  </mat-chip-list>
+</mat-form-field>
+
+
+  
+

@@ -1,7 +1,43 @@
+#add {
+	position: fixed;
+	color : #04DB2B;
+	font-size: 50px;
+ }
 
-mat-expansion-panel {
-	color: black;
-	background-color: #d9d0d0;
-	background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);	
-
+li {
+	font-size: 20px
 }
+
+
+.editdelete {
+	position: sticky;
+	margin-left: 92%;
+	margin-top: -3%;
+	border-right: 1px;
+}
+
+.btn .btn-success{
+	position: fixed;
+	margin-left: 0;
+}
+.input-group {
+	margin-left: 20%;
+}
+#edit {
+	padding-right: 15px;
+	color : #FCDB1C;
+	font-size: 30px;
+}
+#delete {
+	color : #FA4B3C;
+	font-size: 30px;
+}
+#deall {
+	position: fixed;
+	margin-left: 3%;
+	color : #FA4B3C;
+	font-size: 50px;
+ }
+ .btn .btn-outline-dark{
+ 	margin-right: 2%
+ }

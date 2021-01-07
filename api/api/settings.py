@@ -41,11 +41,12 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'project.apps.ProjectConfig',
     'blogs.apps.BlogsConfig',
+    'MyProfile.apps.MyprofileConfig',
     'corsheaders',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',

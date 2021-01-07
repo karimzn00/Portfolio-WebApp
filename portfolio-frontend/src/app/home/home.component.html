@@ -1,0 +1,151 @@
+
+
+<mat-drawer-container class="example-container" autosize>
+
+<body>
+<div class = 'login' *ngIf = '!isAuth'>
+  <button class="btn btn-dark" (click)="openDialog()">Login</button>
+</div>
+
+
+<div class = 'login' *ngIf = 'isAuth'>
+  <button class="btn btn-warning" (click)="logout()">Log out</button>
+</div>
+
+
+<div class="edit_profil" *ngIf = 'isAuth'> 
+    <button class="btn btn-warning" (click)="drawer.toggle()">
+      Edit Profil
+    </button>
+</div>
+
+
+<div class = 'container'>
+   
+   <div class = 'img'>
+ 
+      <img src="./assets/img.jpg" alt="..." class="rounded-circle">
+      <p class = 'name'> KZN </p>
+      <div class = 'smedia'>
+         <img type = 'button' src="./assets/github.png" alt="..." class="social">
+         <img type = 'button' src="./assets/linkedin.png" alt="..." class="social">
+         <img type = 'button' src="./assets/twitter.png" alt="..." class="social">
+         <img type = 'button' src="./assets/instagram.png" alt="..." class="social">
+      </div>
+   </div>
+   
+   <div class = 'info'>
+      <div class="card card-body">
+         <ul class="list-group">
+            <li class="list-group-item">Country : Morocco </li>
+            <li class="list-group-item">Job : Maintenance Engineer </li>
+            <li class="list-group-item">E-MAIL : contact@kimtron.net</li>
+         </ul>
+         
+      <mat-divider></mat-divider>
+        <div class="card-header">Languages :</div>
+         <ul class="list-group" *ngFor = 'let lang of languages'>
+            <li class="list-group-item">{{lang.name}}</li>
+         </ul>
+         <mat-divider></mat-divider>
+        <div class="card-header">Skills :</div>
+         <ul class="list-group" *ngFor = 'let skill of skills'>
+            <li class="list-group-item">{{skill.skill}}</li>
+         </ul>
+
+      </div>
+
+   </div>
+   
+   <div class = 'quote'>
+      <h1>
+      <div class = 'q'>
+     “ Once a new technology rolls over you, if you're not part of the steamroller, you're part of the road. ”
+      <tr>- Stewart Brand
+      </div>
+      </h1>
+   </div>
+   
+
+
+   <div class = 'bio' id = 'biog'>
+
+<mat-accordion>
+    <mat-expansion-panel [expanded]="true" (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+     Biography
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+      <div class="card card-body">
+         This is Karim, from Morocco, I'm 27 years old. I used to do programming since 2008 which make me familiar with many programming languages (Python, Javascrip, Typescript, Latex). my Story began with web-developement as a full stack developper (back-end using django and front-end using angular), last year I started studying Machine Learning using online ressources, including Deep Learning. I have a lot of projects which will be accessable in this Potfolio. I'm working as an Electrical Engineer in my ordinary life.   
+
+      </div>
+
+
+       </ng-template>
+    </mat-expansion-panel>
+
+
+
+       <div class = 'proj' id= 'proj'>
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+      My Projects
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+      <app-project-list></app-project-list>
+      </ng-template>
+    </mat-expansion-panel>
+
+    
+   </div>
+
+
+   <div class = 'blog' id = 'blog'>
+      
+    <mat-expansion-panel (opened)="OpenStateBlog = true"
+                             (closed)="OpenStateBlog = false">
+      <mat-expansion-panel-header>
+      Blogs 
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+
+      <app-blog-list></app-blog-list>
+      </ng-template>
+    </mat-expansion-panel>
+   </div>
+</mat-accordion> 
+   </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+      <div class = 'edit_profil_form'>
+         <app-edit-profil></app-edit-profil>
+         <button  style = ' margin-left : 45%; margin-top: -11.95%' class="btn btn-outline-primary" (click) = 'drawer.toggle()'>
+            cancel
+          </button>
+       </div> 
+  </mat-drawer>
+     
+</mat-drawer-container>

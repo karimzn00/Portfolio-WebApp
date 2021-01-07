@@ -4,12 +4,9 @@ from rest_framework.response import Response
 from rest_framework import permissions
 from blogs.models import Blog
 from blogs.serializers import BlogsSerializer
+from django.views import generic
 
 
-
-
-
-# Create your views here.
 class BlogsViewSet(viewsets.ModelViewSet):
 	queryset = Blog.objects.all()
 	serializer_class = BlogsSerializer

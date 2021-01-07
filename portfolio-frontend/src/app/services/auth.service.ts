@@ -86,7 +86,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     if(token) {
       const cloned = req.clone({
-        headers : req.headers.set('Authorization', 'JWT'.concat(token))
+        headers : req.headers.set('Authorization', 'JWT '.concat(token))
       });
       return next.handle(cloned);
     } else {
@@ -107,7 +107,6 @@ export class AuthGuard implements CanActivate {
       return true;
     } else {
       this.authService.logout();
-      this.router.navigate(['login']);
 
       return false;
     }

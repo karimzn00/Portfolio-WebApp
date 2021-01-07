@@ -1,6 +1,6 @@
 <h4 class="text-center">Login</h4>
 
-<div class="container">
+<div class="container" *ngIf = '!isAuth'>
 	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
 		<div class="form-group">
 			<label for="exampleInputUsername">username</label>
@@ -20,7 +20,7 @@
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" formControlName="password" placeholder="Password">
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Log In</button>
     <p>{{ error?.message }}</p>
      <p *ngIf="error">{{ error?.error | json }}</p>
   </form>

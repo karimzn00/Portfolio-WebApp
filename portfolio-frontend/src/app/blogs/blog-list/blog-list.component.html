@@ -1,6 +1,8 @@
 
 <div class="col-md-8">
-  <div class="input-group mb-3">
+    <mat-icon type = 'button' (click) = 'createBlog()' *ngIf = 'isAuth'  matTooltip="Add new Blog" aria-hidden="false" aria-label="Example home icon" id = 'add'>add</mat-icon>
+     <mat-icon type = 'button' (click) = 'deleteall()' *ngIf = 'isAuth'  matTooltip="delete all Blogs" aria-hidden="false" aria-label="Example home icon" id = 'deall'>delete</mat-icon>
+   <div class="input-group mb-3">
     <input
       type="text"
       class="form-control"
@@ -16,18 +18,46 @@
         Search
       </button>
     </div>
+
   </div>
 </div>
-<mat-accordion *ngFor = 'let blog of blogs'
->
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <span matBadge=" {{blog.date}}" matBadgeOverlap="false" matBadgeSize="large">{{blog.title}}</span>
+
+              
              
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p>{{blog.content}}</p>
-        </mat-expansion-panel>
-</mat-accordion>
+<ul 
+      class="list-group" 
+      *ngFor = 'let blog of blogs; let i = index'
+
+     >
+
+
+
+  <li 
+      type="button" 
+      class="list-group-item list-group-item-action list-group-item-light" 
+      matTooltip="{{blog.description}}"
+      matTooltipPosition="left" 
+      
+      
+      >
+      <a (click) = 'content(blog, i)' >{{blog.title}}</a>
+      <div class = 'editdelete' *ngIf = 'isAuth'>
+
+      <button class="btn btn-outline-dark" [matMenuTriggerFor]="menu">options</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click) = 'editBlog(blog)'>
+        <mat-icon type="button" color="yellow"  id = 'edit' >create</mat-icon> Edit
+
+         </button>
+        <button mat-menu-item (click) = 'delete(blog)'> 
+        <mat-icon type="button"  color="red"  id = 'delete' >delete</mat-icon> Delete
+
+      </button>
+      </mat-menu>
+      
+    </div>
+
+  </li>
+
+
+</ul>

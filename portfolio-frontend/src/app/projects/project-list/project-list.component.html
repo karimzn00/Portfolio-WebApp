@@ -1,6 +1,7 @@
 
-
 <div class="col-md-8">
+    <mat-icon type = 'button' (click) = 'createProj()' *ngIf = 'isAuth'  matTooltip="Add new project" aria-hidden="false" aria-label="Example home icon" id = 'add'>add</mat-icon>
+     <mat-icon type = 'button' (click) = 'deleteall()' *ngIf = 'isAuth'  matTooltip="delete all projects" aria-hidden="false" aria-label="Example home icon" id = 'deall'>delete</mat-icon>
   <div class="input-group mb-3">
     <input
       type="text"
@@ -17,19 +18,45 @@
         Search
       </button>
     </div>
+
   </div>
 </div>
-<mat-accordion *ngFor = 'let project of project'
->
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <span matBadge=" {{project.technology}}" matBadgeOverlap="false" matBadgeSize="large">{{project.title}}</span>
-             
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p>{{project.content}}</p>
-        </mat-expansion-panel>
-</mat-accordion>
 
+              
+             
+<ul 
+      class="list-group" 
+      *ngFor = 'let proj of projects; let i = index'
+
+     >
+
+
+
+  <li 
+      type="button" 
+      class="list-group-item list-group-item-action list-group-item-light" 
+      matTooltip="{{proj.description}}" 
+      matTooltipPosition="right" 
+      
+      
+      >
+      <a (click) = 'content(proj, i)'>{{proj.title}}</a>
+
+    <div class = 'editdelete' *ngIf = 'isAuth'>
+
+      <button class="btn btn-outline-dark" [matMenuTriggerFor]="menu">options</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click) = 'editBlog(proj)'>
+        <mat-icon type="button" color="yellow"  id = 'edit' >create</mat-icon> Edit
+
+         </button>
+        <button mat-menu-item (click) = 'delete(proj)'> 
+        <mat-icon type="button"  color="red"  id = 'delete' >delete</mat-icon> Delete
+
+      </button>
+      </mat-menu>
+    </div>
+  </li>
+
+
+</ul>
